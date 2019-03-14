@@ -1,0 +1,14 @@
+[Unit]
+Description=SandGround
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/
+ExecStartPre=/sbin/runuser -l root -c /root/pre.sh
+ExecStart=/sbin/runuser -l root -c /root/.xsession
+TimeoutSec=infinity
+
+[Install]
+WantedBy=graphical.target
